@@ -6,7 +6,7 @@
 //
 
 
-package generated;
+package com.example.AdventureCapitalist.generated;
 
 import java.util.ArrayList;
 import java.util.List;
