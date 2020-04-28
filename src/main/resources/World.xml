@@ -104,7 +104,7 @@
       <logo>string</logo>
       <seuil>100000</seuil>
       <idcible>1</idcible>
-      <ratio>1.051732E7</ratio>
+      <ratio>1.15</ratio>
       <typeratio>gain</typeratio>
       <unlocked>false</unlocked>
     </pallier>
