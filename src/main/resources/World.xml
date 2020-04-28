@@ -10,50 +10,44 @@
   <products>
     <!--2 to 6 repetitions:-->
     <product>
-      <id>3</id>
-      <name>string</name>
+      <id>1</id>
+      <name>Cuir</name>
       <logo>string</logo>
-      <cout>1.051732E7</cout>
-      <croissance>1.051732E7</croissance>
-      <revenu>1.051732E7</revenu>
-      <vitesse>3</vitesse>
-      <quantite>3</quantite>
-      <timeleft>10</timeleft>
+      <cout>5</cout>
+      <croissance>1.02</croissance>
+      <revenu>15</revenu>
+      <vitesse>500</vitesse>
+      <quantite>0</quantite>
+      <timeleft>0</timeleft>
       <managerUnlocked>false</managerUnlocked>
       <palliers>
         <!--Zero or more repetitions:-->
         <pallier>
-          <name>string</name>
+          <name>Braconnier</name>
           <logo>string</logo>
-          <seuil>1.051732E7</seuil>
-          <idcible>3</idcible>
-          <ratio>1.051732E7</ratio>
-          <typeratio>gain</typeratio>
-          <unlocked>true</unlocked>
+          <seuil>50</seuil>
+          <idcible>1</idcible>
+          <ratio>2</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
         </pallier>
-      </palliers>
-    </product>
-    <product>
-      <id>3</id>
-      <name>string</name>
-      <logo>string</logo>
-      <cout>1.051732E7</cout>
-      <croissance>1.051732E7</croissance>
-      <revenu>1.051732E7</revenu>
-      <vitesse>3</vitesse>
-      <quantite>3</quantite>
-      <timeleft>10</timeleft>
-      <managerUnlocked>true</managerUnlocked>
-      <palliers>
-        <!--Zero or more repetitions:-->
         <pallier>
-          <name>string</name>
+          <name>Tanneur</name>
           <logo>string</logo>
-          <seuil>1.051732E7</seuil>
-          <idcible>3</idcible>
-          <ratio>1.051732E7</ratio>
+          <seuil>500</seuil>
+          <idcible>1</idcible>
+          <ratio>2</ratio>
+          <typeratio>gain</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>LVMH</name>
+          <logo>string</logo>
+          <seuil>1000</seuil>
+          <idcible>1</idcible>
+          <ratio>15</ratio>
           <typeratio>ange</typeratio>
-          <unlocked>true</unlocked>
+          <unlocked>false</unlocked>
         </pallier>
       </palliers>
     </product>
@@ -73,37 +67,46 @@
   <upgrades>
     <!--Zero or more repetitions:-->
     <pallier>
-      <name>string</name>
+      <name>Elevage intensif</name>
       <logo>string</logo>
-      <seuil>1.051732E7</seuil>
-      <idcible>3</idcible>
-      <ratio>1.051732E7</ratio>
-      <typeratio>gain</typeratio>
+      <seuil>300</seuil>
+      <idcible>1</idcible>
+      <ratio>1.15</ratio>
+      <typeratio>vitesse</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>Usine</name>
+      <logo>string</logo>
+      <seuil>750</seuil>
+      <idcible>1</idcible>
+      <ratio>1.15</ratio>
+      <typeratio>vitesse</typeratio>
       <unlocked>false</unlocked>
     </pallier>
   </upgrades>
   <angelupgrades>
     <!--Zero or more repetitions:-->
     <pallier>
-      <name>string</name>
+      <name>Artisan reconnu</name>
       <logo>string</logo>
-      <seuil>1.051732E7</seuil>
-      <idcible>3</idcible>
-      <ratio>1.051732E7</ratio>
+      <seuil>10</seuil>
+      <idcible>1</idcible>
+      <ratio>1.15</ratio>
       <typeratio>gain</typeratio>
-      <unlocked>true</unlocked>
+      <unlocked>false</unlocked>
     </pallier>
   </angelupgrades>
   <managers>
     <!--Zero or more repetitions:-->
     <pallier>
-      <name>string</name>
+      <name>Louis Vuitton</name>
       <logo>string</logo>
-      <seuil>1.051732E7</seuil>
-      <idcible>3</idcible>
+      <seuil>100000</seuil>
+      <idcible>1</idcible>
       <ratio>1.051732E7</ratio>
       <typeratio>gain</typeratio>
-      <unlocked>true</unlocked>
+      <unlocked>false</unlocked>
     </pallier>
   </managers>
 </world>
