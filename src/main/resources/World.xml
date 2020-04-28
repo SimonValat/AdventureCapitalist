@@ -51,6 +51,48 @@
         </pallier>
       </palliers>
     </product>
+    <product>
+      <id>4</id>
+      <name>Or</name>
+      <logo>string</logo>
+      <cout>1E7</cout>
+      <croissance> 1,5</croissance>
+      <revenu>3E7</revenu>
+      <vitesse>50</vitesse>
+      <quantite>0</quantite>
+      <timeleft>0</timeleft>
+      <managerUnlocked>false</managerUnlocked>
+      <palliers>
+        <!--Zero or more repetitions:-->
+        <pallier>
+          <name>Prospecteur d'or</name>
+          <logo>string</logo>
+          <seuil>50</seuil>
+          <idcible>4</idcible>
+          <ratio>1.05</ratio>
+          <typeratio>gain</typeratio>
+          <unlocked>true</unlocked>
+        </pallier>
+        <pallier>
+          <name>Negociant d'or</name>
+          <logo>string</logo>
+          <seuil>100</seuil>
+          <idcible>4</idcible>
+          <ratio>1.10</ratio>
+          <typeratio>gain</typeratio>
+          <unlocked>true</unlocked>
+        </pallier>
+        <pallier>
+          <name>Joallier d'or</name>
+          <logo>string</logo>
+          <seuil>500</seuil>
+          <idcible>4</idcible>
+          <ratio>1.15</ratio>
+          <typeratio>gain</typeratio>
+          <unlocked>true</unlocked>
+        </pallier>
+      </palliers>
+    </product>
   </products>
   <allunlocks>
     <!--Zero or more repetitions:-->
@@ -84,6 +126,24 @@
       <typeratio>vitesse</typeratio>
       <unlocked>false</unlocked>
     </pallier>
+    <pallier>
+      <name>Dynamite</name>
+      <logo>string</logo>
+      <seuil>60</seuil>
+      <idcible>4</idcible>
+      <ratio>1.10</ratio>
+      <typeratio>vitesse</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>Foreuse</name>
+      <logo>string</logo>
+      <seuil>250</seuil>
+      <idcible>4</idcible>
+      <ratio>1.15</ratio>
+      <typeratio>vitesse</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
   </upgrades>
   <angelupgrades>
     <!--Zero or more repetitions:-->
@@ -106,6 +166,16 @@
       <idcible>1</idcible>
       <ratio>1.15</ratio>
       <typeratio>gain</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+
+    <pallier>
+      <name>Chaplin</name>
+      <logo>string</logo>
+      <seuil>500000</seuil>
+      <idcible>4</idcible>
+      <ratio>1.10</ratio>
+      <typeratio>vitesse</typeratio>
       <unlocked>false</unlocked>
     </pallier>
   </managers>
