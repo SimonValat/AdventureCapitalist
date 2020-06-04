@@ -1,4 +1,6 @@
 package com.example.AdventureCapitalist;
+import com.example.AdventureCapitalist.generated.World;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
@@ -17,7 +19,9 @@ public class Webservice {
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response getWorld(@Context HttpServletRequest request) {
         String username = request.getHeader("X-user");
-        return Response.ok(services.getWorld(username)).build();
+        World lWorld = services.getWorld(username);
+        services.saveWorldToXml(lWorld, username);
+        return Response.ok(lWorld).build();
     }
 
 }
