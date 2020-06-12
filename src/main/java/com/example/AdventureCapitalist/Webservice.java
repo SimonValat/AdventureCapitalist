@@ -1,5 +1,9 @@
 package com.example.AdventureCapitalist;
+import com.example.AdventureCapitalist.generated.PallierType;
+import com.example.AdventureCapitalist.generated.PalliersType;
+import com.example.AdventureCapitalist.generated.ProductType;
 import com.example.AdventureCapitalist.generated.World;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.*;
@@ -23,6 +27,21 @@ public class Webservice {
         services.saveWorldToXml(lWorld, username);
         return Response.ok(lWorld).build();
     }
+
+    @PUT
+    @Path("product")
+    public void productAction (@Context HttpServletRequest request ,@RequestBody ProductType pProductType){
+        String username = request.getHeader("X-user");
+        services.updateProduct(username,pProductType);
+    }
+
+    @PUT
+    @Path("manager")
+    public void managerAction(@Context HttpServletRequest request, @RequestBody PallierType pPallierType){
+        String username = request.getHeader("X-user");
+        services.updateManager(username,pPallierType);
+    }
+
 
 }
 

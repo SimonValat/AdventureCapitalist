@@ -1,5 +1,5 @@
 <world>
-  <name>Mr WorldWide XD</name>
+  <name>CapitalismCraft</name>
   <logo>MrWorldWide.png</logo>
   <money></money>
   <score>1.051732E7</score>
@@ -11,12 +11,96 @@
     <!--2 to 6 repetitions:-->
     <product>
       <id>1</id>
-      <name>Cuir</name>
-      <logo>string</logo>
+      <name>Wheat</name>
+      <logo>wheat.png</logo>
       <cout>5</cout>
       <croissance>1.02</croissance>
-      <revenu>15</revenu>
+      <revenu>2</revenu>
       <vitesse>500</vitesse>
+      <quantite>0</quantite>
+      <timeleft>0</timeleft>
+      <managerUnlocked>false</managerUnlocked>
+      <palliers>
+        <!--Zero or more repetitions:-->
+        <pallier>
+          <name>Fermier</name>
+          <logo>string</logo>
+          <seuil>50</seuil>
+          <idcible>1</idcible>
+          <ratio>2</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>Exploitant</name>
+          <logo>string</logo>
+          <seuil>500</seuil>
+          <idcible>1</idcible>
+          <ratio>2</ratio>
+          <typeratio>gain</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>Cargill</name>
+          <logo>string</logo>
+          <seuil>5000</seuil>
+          <idcible>1</idcible>
+          <ratio>15</ratio>
+          <typeratio>ange</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+      </palliers>
+    </product>
+    <product>
+      <id>2</id>
+      <name>Leather</name>
+      <logo>leather.png</logo>
+      <cout>50</cout>
+      <croissance>1.10</croissance>
+      <revenu>25</revenu>
+      <vitesse>700</vitesse>
+      <quantite>0</quantite>
+      <timeleft>0</timeleft>
+      <managerUnlocked>false</managerUnlocked>
+      <palliers>
+        <!--Zero or more repetitions:-->
+        <pallier>
+          <name>Braconnier</name>
+          <logo>string</logo>
+          <seuil>50</seuil>
+          <idcible>1</idcible>
+          <ratio>2</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>Tanneur</name>
+          <logo>string</logo>
+          <seuil>500</seuil>
+          <idcible>1</idcible>
+          <ratio>2</ratio>
+          <typeratio>gain</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>LVMH</name>
+          <logo>string</logo>
+          <seuil>1000</seuil>
+          <idcible>1</idcible>
+          <ratio>15</ratio>
+          <typeratio>ange</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+      </palliers>
+    </product>
+    <product>
+      <id>3</id>
+      <name>Iron</name>
+      <logo>iron.png</logo>
+      <cout>100</cout>
+      <croissance>1.10</croissance>
+      <revenu>75</revenu>
+      <vitesse>1000</vitesse>
       <quantite>0</quantite>
       <timeleft>0</timeleft>
       <managerUnlocked>false</managerUnlocked>
@@ -55,10 +139,10 @@
       <id>4</id>
       <name>Or</name>
       <logo>string</logo>
-      <cout>1E7</cout>
-      <croissance> 1,5</croissance>
-      <revenu>3E7</revenu>
-      <vitesse>50</vitesse>
+      <cout>2500</cout>
+      <croissance> 1,2</croissance>
+      <revenu>2000</revenu>
+      <vitesse>5</vitesse>
       <quantite>0</quantite>
       <timeleft>0</timeleft>
       <managerUnlocked>false</managerUnlocked>
@@ -83,7 +167,49 @@
           <unlocked>true</unlocked>
         </pallier>
         <pallier>
-          <name>Joallier d'or</name>
+          <name>Cartier</name>
+          <logo>string</logo>
+          <seuil>500</seuil>
+          <idcible>4</idcible>
+          <ratio>1.15</ratio>
+          <typeratio>gain</typeratio>
+          <unlocked>true</unlocked>
+        </pallier>
+      </palliers>
+    </product>
+    <product>
+      <id>5</id>
+      <name>Ender pearl</name>
+      <logo>enderpearl.png</logo>
+      <cout>50000</cout>
+      <croissance> 1,5</croissance>
+      <revenu>40000</revenu>
+      <vitesse>15</vitesse>
+      <quantite>0</quantite>
+      <timeleft>0</timeleft>
+      <managerUnlocked>false</managerUnlocked>
+      <palliers>
+        <!--Zero or more repetitions:-->
+        <pallier>
+          <name>Ender explorer</name>
+          <logo>string</logo>
+          <seuil>50</seuil>
+          <idcible>4</idcible>
+          <ratio>1.05</ratio>
+          <typeratio>gain</typeratio>
+          <unlocked>true</unlocked>
+        </pallier>
+        <pallier>
+          <name>Ender hunter</name>
+          <logo>string</logo>
+          <seuil>100</seuil>
+          <idcible>4</idcible>
+          <ratio>1.10</ratio>
+          <typeratio>gain</typeratio>
+          <unlocked>true</unlocked>
+        </pallier>
+        <pallier>
+          <name>Boucheron</name>
           <logo>string</logo>
           <seuil>500</seuil>
           <idcible>4</idcible>
@@ -94,6 +220,48 @@
       </palliers>
     </product>
   </products>
+  <product>
+    <id>6</id>
+    <name>Diamond</name>
+    <logo>diamond.png</logo>
+    <cout>1000000</cout>
+    <croissance> 2</croissance>
+    <revenu>850000</revenu>
+    <vitesse>30</vitesse>
+    <quantite>0</quantite>
+    <timeleft>0</timeleft>
+    <managerUnlocked>false</managerUnlocked>
+    <palliers>
+      <!--Zero or more repetitions:-->
+      <pallier>
+        <name>Diamond miner</name>
+        <logo>string</logo>
+        <seuil>50</seuil>
+        <idcible>4</idcible>
+        <ratio>1.05</ratio>
+        <typeratio>gain</typeratio>
+        <unlocked>true</unlocked>
+      </pallier>
+      <pallier>
+        <name>Diamond merchant</name>
+        <logo>string</logo>
+        <seuil>100</seuil>
+        <idcible>4</idcible>
+        <ratio>1.10</ratio>
+        <typeratio>gain</typeratio>
+        <unlocked>true</unlocked>
+      </pallier>
+      <pallier>
+        <name>Tiffany and Co</name>
+        <logo>string</logo>
+        <seuil>500</seuil>
+        <idcible>4</idcible>
+        <ratio>1.15</ratio>
+        <typeratio>gain</typeratio>
+        <unlocked>true</unlocked>
+      </pallier>
+    </palliers>
+  </product>
   <allunlocks>
     <!--Zero or more repetitions:-->
     <pallier>
