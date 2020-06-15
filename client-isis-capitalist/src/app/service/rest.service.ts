@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient,HttpHeaders} from '@angular/common/http';
 import { World, Pallier, Product } from '../world';
 
 @Injectable({
@@ -22,31 +22,22 @@ export class RestService {
     this.user = pUser;
   }
  
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   // private setHeaders(user : string) : Headers {
   //   return new HttpHeaders( { "X-User" : user });
 
   // }
 
-  //  getWorld(): Promise<World> {
-  //   return this.http.get(this.server + "webresources/generic/world", {
-  //  headers: this.setHeaders(this.user)})
-  //   .toPromise().catch(this.handleError);
-  //  };
+  getWorld(): Promise<World> {
+    return this.http.get(this.server + "adventureisis/generic/world")
+    .toPromise().catch(this.handleError);
+   };
+   
 
-  //  private handleError(error: any): Promise<any> {
-  //   console.error('An error occurred', error);
-  //   return Promise.reject(error.message || error);
-  //  }
+   private handleError(error: any): Promise<any> {
+    console.error('An error occurred', error);
+    return Promise.reject(error.message || error);
+   }
 
-  //  putManager(manager : Pallier): Promise<Response> {
-  //   return this.http.put(this.server + "webresources/generic/manager", manager,
-  //  { headers: this.setHeaders(this.user)} )
-  //   .toPromise();
-  //  }
-   
-   
-   
-   
 }
