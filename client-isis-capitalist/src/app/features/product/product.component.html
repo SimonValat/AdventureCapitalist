@@ -1,0 +1,20 @@
+<div class="flex-row product">
+    <img src="../../../assets/img/{{image}}">
+    <div class="flex-column">
+        <div class="flex-1">
+            <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+        </div>
+        <div class="flex-1">
+            <button class="achat" (click)="transaction()">
+                <div class="flex-row flex-1">
+                    <img class="emeraude-achat" src="../../../assets/img/emeraude.png">
+                    <p>{{coutCalcule}}</p>
+                    <img class="emeraude-achat" src="../../../assets/img/fleche.png">
+                    <img class="ble-achat" src="../../../assets/img/ble.png">
+                    <p>{{quantiteAchat}}</p>
+                </div>
+            </button>
+            <!-- <input class="timer" type="text"> -->
+        </div>
+    </div>
+</div>

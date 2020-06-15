@@ -1,1 +1,116 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+  
+/* FONT */
+@font-face {
+  font-family: "minecraft";
+  src: url("assets/fonts/Minecraft.ttf");
+}
+
+.background{
+    background-image:url('assets/img/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bouton-non-clique{
+    background-image: url('assets/img/bouton-non-clique.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: 2rem;
+    border-width: 0px;
+    height: 5rem;
+    font-size: 1.5rem;
+    font-family: minecraft;
+    color: white;
+    padding: 0rem 2rem;
+}
+.zone-produit{
+    display: flex;
+    flex-direction: row;
+    margin:5rem auto;
+}
+
+.product{
+    background-image: url('assets/img/product.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin:3rem;
+    width: 20rem;
+}
+.barre-chargement{
+    background-image: url('assets/img/chargement.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.achat{
+    background-image: url('assets/img/achat.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    font-size: 1.5rem;
+    font-family: minecraft;
+    color: white;
+    min-width: 249px;
+    max-width: 100%;
+    height: 60px;
+} 
+.timer{
+    width: 25%;
+}
+
+.emeraude-achat{
+    width: 4rem;
+    height: 4rem;
+}
+.ble-achat{
+    width: 4rem;
+    height: 4rem;
+    position: relative;
+    right: 1rem;
+}
+
+/* FLEX utils */
+.flex-row {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .flex-column {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .flex-row-align {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .flex-column-align {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .flex-1 {
+    flex: 1;
+  }
+  
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  
+  .flex-row .mat-card+.mat-card {
+    margin-left: 3rem;
+  }
+  
+  .flex-column .mat-card+.mat-card {
+    margin-top: 3rem;
+  }
+  
+  .hidden {
+    display: none;
+  }
+
