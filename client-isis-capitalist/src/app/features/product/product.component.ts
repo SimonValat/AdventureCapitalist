@@ -1,5 +1,4 @@
 import { Component, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
-import { SauvegardeService } from 'src/app/service/sauvegarde.service';
 
 @Component({
   selector: 'app-product',
@@ -21,7 +20,7 @@ export class ProductComponent implements OnInit, OnChanges {
 
 
   constructor(
-    private serviceSauvegarde: SauvegardeService
+    
   ) { }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -41,6 +40,6 @@ export class ProductComponent implements OnInit, OnChanges {
     }
     this.newCout = this.cout * this.croissance ^ (this.quantite + this.quantiteAchat);
     this.newQuantite = this.quantite + this.quantiteAchat;
-    this.serviceSauvegarde.saveTransaction();
+    //this.serviceSauvegarde.saveTransaction();
   }
 }
