@@ -5,6 +5,7 @@ import com.example.AdventureCapitalist.generated.ProductType;
 import com.example.AdventureCapitalist.generated.ProductsType;
 import com.example.AdventureCapitalist.generated.World;
 import com.sun.xml.internal.ws.util.Pool;
+import org.apache.tomcat.jni.Time;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -75,7 +76,11 @@ public class Services {
 
    public World getWorld(String pPlayerName){
 
-       return readWorldFromXml(pPlayerName);
+       World lWorld = readWorldFromXml(pPlayerName);
+       updatePlayerScore(lWorld);
+       saveWorldToXml(lWorld,pPlayerName);
+       return lWorld;
+
    }
 
     public boolean updateProduct(String username,ProductType pProduct){
@@ -147,7 +152,15 @@ public class Services {
                 }
             }
             else if(item.isManagerUnlocked()){
-               
+               int nbProduce = 0;
+               long Temps = TimeDif;
+               while(TimeDif >= item.getVitesse()){
+                   nbProduce++;
+                   TimeDif = TimeDif-item.getVitesse();
+               }
+                pWorld.setMoney(pWorld.getMoney()+nbProduce*item.getRevenu());
+                pWorld.setScore(pWorld.getScore()+nbProduce*item.getRevenu());
+                item.setTimeleft(TimeDif);
             }
         }
        //on met à jour le last update
