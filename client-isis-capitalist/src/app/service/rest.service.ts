@@ -24,15 +24,16 @@ export class RestService {
  
   constructor(private http: HttpClient) { }
 
-  // private setHeaders(user : string) : Headers {
-  //   return new HttpHeaders( { "X-User" : user });
-
-  // }
+  private setHeaders(user : string) : HttpHeaders {
+  return new HttpHeaders( { "X-User" : user });
+  }
 
   getWorld(): Promise<World> {
-    return this.http.get(this.server + "adventureisis/generic/world")
+    return this.http.get(this.server + "webresources/generic/world", {
+   headers: this.setHeaders(this.user)})
     .toPromise().catch(this.handleError);
    };
+   
    
 
    private handleError(error: any): Promise<any> {

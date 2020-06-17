@@ -92,9 +92,11 @@ public class Services {
         }
 
         int qtchange = pProduct.getQuantite() - product.getQuantite();
+        System.out.println(pProduct.getQuantite());
         if(qtchange>0){
             lWorld.setMoney(lWorld.getMoney()-product.getCout()*qtchange);
-            product.setQuantite(product.getQuantite());
+            product.setQuantite(pProduct.getQuantite());
+            System.out.println(product.getQuantite()+ "toto");
         } else{
             product.setTimeleft(product.getVitesse());
         }
@@ -124,6 +126,7 @@ public class Services {
            return false;
        }
         lProduct.setManagerUnlocked(true);
+        manager.setUnlocked(true);
         lWorld.setMoney(lWorld.getMoney()-manager.getSeuil());
         saveWorldToXml(lWorld,username);
         return true;
@@ -145,8 +148,8 @@ public class Services {
             if(item.getTimeleft() >0 && !item.isManagerUnlocked()){
                 if(TimeDif >item.getTimeleft()){
                     item.setTimeleft(0);
-                    pWorld.setMoney(pWorld.getMoney()+item.getRevenu());
-                    pWorld.setScore(pWorld.getScore()+item.getRevenu());
+                    pWorld.setMoney(pWorld.getMoney()+item.getRevenu()*item.getQuantite());
+                    pWorld.setScore(pWorld.getScore()+item.getRevenu()*item.getQuantite());
                 } else{
                     item.setTimeleft(item.getTimeleft() - TimeDif);
                 }
@@ -158,14 +161,19 @@ public class Services {
                    nbProduce++;
                    TimeDif = TimeDif-item.getVitesse();
                }
-                pWorld.setMoney(pWorld.getMoney()+nbProduce*item.getRevenu());
-                pWorld.setScore(pWorld.getScore()+nbProduce*item.getRevenu());
+                pWorld.setMoney(pWorld.getMoney()+nbProduce*item.getRevenu()*item.getQuantite());
+                pWorld.setScore(pWorld.getScore()+nbProduce*item.getRevenu()*item.getQuantite());
                 item.setTimeleft(TimeDif);
             }
         }
        //on met à jour le last update
         pWorld.setLastupdate(System.currentTimeMillis());
     }
+
+
+   // double revenus = quantiteproduite * product.getQuantite() * product.getRevenu();
+    // bonus des anges
+    //revenus += revenus * (world.getActiveangels() * world.getAngelbonus() / 100);
 
 }
 

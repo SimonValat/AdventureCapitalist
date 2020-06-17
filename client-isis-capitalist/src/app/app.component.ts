@@ -16,11 +16,11 @@ export class AppComponent {
   server: string;
 
   constructor(private service: RestService) {
-    // this.server = service.getServer();
-    // service.getWorld().then(
-    // world => {
-    // this.world = world;
-    // });
+    this.server = service.getServer();
+    service.getWorld().then(
+    world => {
+    this.world = world;
+    });
     }
    
 

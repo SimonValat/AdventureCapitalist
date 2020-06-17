@@ -2,20 +2,20 @@
   <name>CapitalismCraft</name>
   <logo>MrWorldWide.png</logo>
   <money></money>
-  <score>1.051732E7</score>
-  <totalangels>1.051732E7</totalangels>
-  <activeangels>1.051732E7</activeangels>
-  <angelbonus>3</angelbonus>
-  <lastupdate>10</lastupdate>
+  <score>0</score>
+  <totalangels>0</totalangels>
+  <activeangels>0</activeangels>
+  <angelbonus>0</angelbonus>
+  <lastupdate>0</lastupdate>
   <products>
     <!--2 to 6 repetitions:-->
     <product>
       <id>1</id>
       <name>Wheat</name>
       <logo>wheat.png</logo>
-      <cout>5</cout>
-      <croissance>1.02</croissance>
-      <revenu>2</revenu>
+      <cout>4</cout>
+      <croissance>1.07</croissance>
+      <revenu>1</revenu>
       <vitesse>500</vitesse>
       <quantite>0</quantite>
       <timeleft>0</timeleft>
@@ -55,10 +55,10 @@
       <id>2</id>
       <name>Leather</name>
       <logo>leather.png</logo>
-      <cout>50</cout>
-      <croissance>1.10</croissance>
-      <revenu>25</revenu>
-      <vitesse>700</vitesse>
+      <cout>60</cout>
+      <croissance>1.15</croissance>
+      <revenu>60</revenu>
+      <vitesse>3000</vitesse>
       <quantite>0</quantite>
       <timeleft>0</timeleft>
       <managerUnlocked>false</managerUnlocked>
@@ -97,10 +97,10 @@
       <id>3</id>
       <name>Iron</name>
       <logo>iron.png</logo>
-      <cout>100</cout>
-      <croissance>1.10</croissance>
-      <revenu>75</revenu>
-      <vitesse>1000</vitesse>
+      <cout>720</cout>
+      <croissance>1.14</croissance>
+      <revenu>540</revenu>
+      <vitesse>6000</vitesse>
       <quantite>0</quantite>
       <timeleft>0</timeleft>
       <managerUnlocked>false</managerUnlocked>
@@ -139,10 +139,10 @@
       <id>4</id>
       <name>Or</name>
       <logo>string</logo>
-      <cout>2500</cout>
-      <croissance> 1,2</croissance>
-      <revenu>2000</revenu>
-      <vitesse>5</vitesse>
+      <cout>8640</cout>
+      <croissance>1,13</croissance>
+      <revenu>4320</revenu>
+      <vitesse>12000</vitesse>
       <quantite>0</quantite>
       <timeleft>0</timeleft>
       <managerUnlocked>false</managerUnlocked>
@@ -181,10 +181,10 @@
       <id>5</id>
       <name>Ender pearl</name>
       <logo>enderpearl.png</logo>
-      <cout>50000</cout>
-      <croissance> 1,5</croissance>
-      <revenu>40000</revenu>
-      <vitesse>15</vitesse>
+      <cout>103680</cout>
+      <croissance>1,12</croissance>
+      <revenu>51840</revenu>
+      <vitesse>24000</vitesse>
       <quantite>0</quantite>
       <timeleft>0</timeleft>
       <managerUnlocked>false</managerUnlocked>
@@ -224,10 +224,10 @@
     <id>6</id>
     <name>Diamond</name>
     <logo>diamond.png</logo>
-    <cout>1000000</cout>
-    <croissance> 2</croissance>
-    <revenu>850000</revenu>
-    <vitesse>30</vitesse>
+    <cout>1255000</cout>
+    <croissance>1.11</croissance>
+    <revenu>650000</revenu>
+    <vitesse>96000</vitesse>
     <quantite>0</quantite>
     <timeleft>0</timeleft>
     <managerUnlocked>false</managerUnlocked>

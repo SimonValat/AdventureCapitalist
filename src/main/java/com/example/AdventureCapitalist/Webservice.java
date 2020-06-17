@@ -42,6 +42,14 @@ public class Webservice {
         services.updateManager(username,pPallierType);
     }
 
+    @GET
+    @Path("test")
+    public Response testProduct(@Context HttpServletRequest request){
+        String username = request.getHeader("X-user");
+        World lWorld = services.getWorld(username);
+        return Response.ok(lWorld.getManagers().getPallier().get(0)).build();
+    }
+
 
 }
 
