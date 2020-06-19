@@ -1,7 +1,7 @@
 <world>
   <name>CapitalismCraft</name>
   <logo>MrWorldWide.png</logo>
-  <money></money>
+  <money>100</money>
   <score>0</score>
   <totalangels>0</totalangels>
   <activeangels>0</activeangels>

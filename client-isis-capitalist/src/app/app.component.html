@@ -1,8 +1,8 @@
 <div class="header">
-  <div>
-    <span id="worldname">{{world.name}}<img [attr.src]="server+world.logo" /></span>
+  <div *ngIf="world">
+    <span id="worldname">{{world.name}}<img [attr.src]="server+world.logo" style="width: 50px;" /></span>
   </div>
-  <div>
+  <div *ngIf="world">
     <span [innerHTML]="world.money | bigvalue" class="bouton-non-clique"></span>
   </div>
   <div> multiplicateur </div>
@@ -36,7 +36,7 @@
       <button mat-menu-item>Item 2</button>
     </mat-menu>
   </div>
-  <div class="zone-produit">
+  <div class="zone-produit" *ngIf="world">
     <button class="bouton-non-clique" (click)="changerMulitplicateurAchat()">achat par {{qtmulti}}</button>
     <div>
       <app-product [prod]="world.products.product[0]" [qtmulti]="qtmulti" [money]="world.money" (notifyProduction)="onProductionDone($event)" (onBuy)="onBuyDone($event)"></app-product>

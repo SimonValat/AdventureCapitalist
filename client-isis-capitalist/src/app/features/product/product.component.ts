@@ -23,7 +23,6 @@ export class ProductComponent implements OnInit, OnChanges {
   @Input()
   set prod(value: Product) {
     this.product = value;
-    console.log(this.product.name)
   }
   _qtmulti: string;
   @Input()
