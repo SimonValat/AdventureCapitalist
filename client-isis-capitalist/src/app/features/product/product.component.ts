@@ -23,6 +23,7 @@ export class ProductComponent implements OnInit, OnChanges {
   @Input()
   set prod(value: Product) {
     this.product = value;
+    console.log(this.product.name)
   }
   _qtmulti: string;
   @Input()
@@ -34,9 +35,11 @@ export class ProductComponent implements OnInit, OnChanges {
   }
   emeraude: number;
   @Input()
-  set money(value: number) {
-    this.emeraude = value;
-    this.calcMaxCanBuy();
+    set money(value: number) {
+      if(this.product){
+        this.emeraude = value;
+        this.calcMaxCanBuy();
+    } 
   }
   progressbarvalue = 0;
   lastupdate;

@@ -29,7 +29,7 @@ export class RestService {
   }
 
   getWorld(): Promise<World> {
-    return this.http.get("http://localhost:8080/adventureisis/generic/world", {
+    return this.http.get(this.server + "adventureisis/generic/world", {
     headers: this.setHeaders("test")})
     .toPromise().catch(this.handleError);   
   };

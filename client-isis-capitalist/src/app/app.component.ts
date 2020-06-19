@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
   }
 
   title = 'CapitalismCraft';
-  world: World = new World();
+  world: World;
 
   server: string;
 
@@ -32,8 +32,6 @@ export class AppComponent implements OnInit {
   qtmulti = '1';
 
   ngOnInit(): void {
-
-    console.log(this.world+ "toto");
   }
 
   changerMulitplicateurAchat() {

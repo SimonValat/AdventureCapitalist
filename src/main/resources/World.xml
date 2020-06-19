@@ -219,49 +219,49 @@
         </pallier>
       </palliers>
     </product>
+    <product>
+      <id>6</id>
+      <name>Diamond</name>
+      <logo>diamond.png</logo>
+      <cout>1255000</cout>
+      <croissance>1.11</croissance>
+      <revenu>650000</revenu>
+      <vitesse>96000</vitesse>
+      <quantite>0</quantite>
+      <timeleft>0</timeleft>
+      <managerUnlocked>false</managerUnlocked>
+      <palliers>
+        <!--Zero or more repetitions:-->
+        <pallier>
+          <name>Diamond miner</name>
+          <logo>string</logo>
+          <seuil>50</seuil>
+          <idcible>4</idcible>
+          <ratio>1.05</ratio>
+          <typeratio>gain</typeratio>
+          <unlocked>true</unlocked>
+        </pallier>
+        <pallier>
+          <name>Diamond merchant</name>
+          <logo>string</logo>
+          <seuil>100</seuil>
+          <idcible>4</idcible>
+          <ratio>1.10</ratio>
+          <typeratio>gain</typeratio>
+          <unlocked>true</unlocked>
+        </pallier>
+        <pallier>
+          <name>Tiffany and Co</name>
+          <logo>string</logo>
+          <seuil>500</seuil>
+          <idcible>4</idcible>
+          <ratio>1.15</ratio>
+          <typeratio>gain</typeratio>
+          <unlocked>true</unlocked>
+        </pallier>
+      </palliers>
+    </product>
   </products>
-  <product>
-    <id>6</id>
-    <name>Diamond</name>
-    <logo>diamond.png</logo>
-    <cout>1255000</cout>
-    <croissance>1.11</croissance>
-    <revenu>650000</revenu>
-    <vitesse>96000</vitesse>
-    <quantite>0</quantite>
-    <timeleft>0</timeleft>
-    <managerUnlocked>false</managerUnlocked>
-    <palliers>
-      <!--Zero or more repetitions:-->
-      <pallier>
-        <name>Diamond miner</name>
-        <logo>string</logo>
-        <seuil>50</seuil>
-        <idcible>4</idcible>
-        <ratio>1.05</ratio>
-        <typeratio>gain</typeratio>
-        <unlocked>true</unlocked>
-      </pallier>
-      <pallier>
-        <name>Diamond merchant</name>
-        <logo>string</logo>
-        <seuil>100</seuil>
-        <idcible>4</idcible>
-        <ratio>1.10</ratio>
-        <typeratio>gain</typeratio>
-        <unlocked>true</unlocked>
-      </pallier>
-      <pallier>
-        <name>Tiffany and Co</name>
-        <logo>string</logo>
-        <seuil>500</seuil>
-        <idcible>4</idcible>
-        <ratio>1.15</ratio>
-        <typeratio>gain</typeratio>
-        <unlocked>true</unlocked>
-      </pallier>
-    </palliers>
-  </product>
   <allunlocks>
     <!--Zero or more repetitions:-->
     <pallier>
@@ -336,7 +336,6 @@
       <typeratio>gain</typeratio>
       <unlocked>false</unlocked>
     </pallier>
-
     <pallier>
       <name>Chaplin</name>
       <logo>string</logo>
