@@ -9,6 +9,7 @@ import { EcranPrincipalComponent } from './features/ecran-principal/ecran-princi
 import { ProductComponent } from './features/product/product.component';
 import {RestService} from './service/rest.service';
 import { BigvaluePipe } from './bigvalue.pipe';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BigvaluePipe } from './bigvalue.pipe';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatMenuModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    HttpClientModule
   ],
   providers: [
     RestService

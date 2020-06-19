@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
       });
   }
 
-  title = 'client-isis-capitalist';
+  title = 'CapitalismCraft';
   world: World = new World();
 
   server: string;
@@ -33,6 +33,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
 
+    console.log(this.world.products);
+    
     this.world.products.product = new Array<Product>();
     // BLE
     this.world.products.product.push(new Product());

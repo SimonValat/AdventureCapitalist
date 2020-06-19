@@ -101,6 +101,7 @@ public class Services {
             product.setTimeleft(product.getVitesse());
         }
 
+
         saveWorldToXml(lWorld, username);
         return true;
     }
@@ -155,16 +156,13 @@ public class Services {
                 }
             }
             else if(item.isManagerUnlocked()){
-               int nbProduce = 0;
-               if(item.getTimeleft() != 0 && item.getTimeleft()>TimeDif){
-                   nbProduce++;
-                   TimeDif = TimeDif - item.getTimeleft();
-                   item.setTimeleft(0);
-               }
-               while(TimeDif >= item.getVitesse()){
-                   nbProduce++;
-                   TimeDif = TimeDif-item.getVitesse();
-               }
+                int nbProduce = 0;
+                // on prend le temps écoulé et on y ajoute le temps de production actuel du produit.
+                long Temps = TimeDif + item.getVitesse() - item.getTimeleft();
+                while(Temps >= item.getVitesse()){
+                    nbProduce++;
+                    Temps = Temps-item.getVitesse();
+                }
                 pWorld.setMoney(pWorld.getMoney()+nbProduce*item.getRevenu()*item.getQuantite());
                 pWorld.setScore(pWorld.getScore()+nbProduce*item.getRevenu()*item.getQuantite());
                 item.setTimeleft(TimeDif);
@@ -173,6 +171,7 @@ public class Services {
        //on met à jour le last update
         pWorld.setLastupdate(System.currentTimeMillis());
     }
+
 
 
    // double revenus = quantiteproduite * product.getQuantite() * product.getRevenu();

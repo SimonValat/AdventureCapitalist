@@ -29,9 +29,9 @@ export class RestService {
   }
 
   getWorld(): Promise<World> {
-    return this.http.get(this.server + "webresources/generic/world", {
-   headers: this.setHeaders(this.user)})
-    .toPromise().catch(this.handleError);
+    return this.http.get(this.server + "adventureisis/generic/world", {
+   headers: this.setHeaders("test")})
+    .toPromise().catch(this.handleError);   
   };
 
   private handleError(error: any): Promise<any> {
@@ -39,16 +39,10 @@ export class RestService {
     return Promise.reject(error.message || error);
   }
 
-  private putManager(manager : Pallier): Promise<Response> {
-    return this.http.put(this.server+"webresources/generic/manager",manager,{ headers: this.setHeaders(this.user)}).toPromise();
-   
+  putManager(manager : Pallier): Promise<any> {
+    return this.http.put(this.server + "adventureisis/generic/manager", manager,
+    { headers: this.setHeaders(this.user)} )
+    .toPromise();
   }
-   
-
-  // putManager(manager : Pallier): Promise<Response> {
-  //   return this.http.put(this.server + "webresources/generic/manager", manager,
-  //  { headers: this.setHeaders(this.user)} )
-  //   .toPromise();
-  //  }
-
+    
 }
