@@ -56,7 +56,7 @@ export class ProductComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-    setInterval(() => { this.calcScore(); }, 100);
+    //setInterval(() => { this.calcScore(); }, 100);
     this.croissance = 0;
     // this.calcMaxCanBuy();
     // this.coutCalcule = (this.product.cout * this.product.croissance ^ (this.product.quantite + this.quantiteAchat)) / (1 - this.croissance);

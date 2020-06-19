@@ -33,42 +33,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
 
-    console.log(this.world.products);
-    
-    this.world.products.product = new Array<Product>();
-    // BLE
-    this.world.products.product.push(new Product());
-    this.world.products.product[0].cout = 7;
-    this.world.products.product[0].quantite = 3;
-    this.world.products.product[0].logo = 'ble.png';
-    // CUIR
-    this.world.products.product.push(new Product());
-    this.world.products.product[1].cout = 7;
-    this.world.products.product[1].quantite = 3;
-    this.world.products.product[1].logo = 'cuir.png';
-    // IRON
-    this.world.products.product.push(new Product());
-    this.world.products.product[2].cout = 7;
-    this.world.products.product[2].quantite = 3;
-    this.world.products.product[2].logo = 'iron.png';
-    // OR
-    this.world.products.product.push(new Product());
-    this.world.products.product[3].cout = 7;
-    this.world.products.product[3].quantite = 3;
-    this.world.products.product[3].logo = 'or.png';
-    // DIAMANT
-    this.world.products.product.push(new Product());
-    this.world.products.product[4].cout = 7;
-    this.world.products.product[4].quantite = 3;
-    this.world.products.product[4].logo = 'diamant.png';
-    // PERLE ENDER
-    this.world.products.product.push(new Product());
-    this.world.products.product[5].cout = 7;
-    this.world.products.product[5].quantite = 3;
-    this.world.products.product[5].logo = 'perle-ender.png';
-
-    this.world.money = 10;
-
+    console.log(this.world+ "toto");
   }
 
   changerMulitplicateurAchat() {
