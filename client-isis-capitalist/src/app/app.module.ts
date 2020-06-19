@@ -8,12 +8,14 @@ import { AppComponent } from './app.component';
 import { EcranPrincipalComponent } from './features/ecran-principal/ecran-principal.component';
 import { ProductComponent } from './features/product/product.component';
 import {RestService} from './service/rest.service';
+import { BigvaluePipe } from './bigvalue.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     EcranPrincipalComponent,
-    ProductComponent
+    ProductComponent,
+    BigvaluePipe
   ],
   imports: [
     BrowserModule,

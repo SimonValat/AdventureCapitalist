@@ -1,16 +1,17 @@
 <div class="flex-row product">
-    <img src="../../../assets/img/{{image}}">
+    <img src="http://localhost:8080/{{product.logo}}" (click)="startFabrication()">
+    <p class="minecraft-font">{{product.quantite}}</p>
     <div class="flex-column">
         <div class="flex-1">
-            <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+            <mat-progress-bar class="progressbar"></mat-progress-bar>
         </div>
         <div class="flex-1">
-            <button class="achat" (click)="transaction()">
+            <button *ngIf="'coutCalcule<emeraude'" class="achat" (click)="transaction()">
                 <div class="flex-row flex-1">
-                    <img class="emeraude-achat" src="../../../assets/img/emeraude.png">
+                    <img class="emeraude-achat" src="http://localhost:8080/emeraude.png">
                     <p>{{coutCalcule}}</p>
-                    <img class="emeraude-achat" src="../../../assets/img/fleche.png">
-                    <img class="ble-achat" src="../../../assets/img/ble.png">
+                    <img class="emeraude-achat" src="http://localhost:8080/fleche.png">
+                    <img class="ble-achat" src="http://localhost:8080/{{product.logo}}">
                     <p>{{quantiteAchat}}</p>
                 </div>
             </button>
