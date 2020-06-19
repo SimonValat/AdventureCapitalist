@@ -34,11 +34,20 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .product{
-    background-image: url('assets/img/product.png');
     background-size: cover;
     background-repeat: no-repeat;
     margin:3rem;
     width: 20rem;
+}
+
+.emeraude{
+  width: 2em;
+  height: 2em;
+}
+
+.product-logo{
+  width: 5em;
+  height: 5em;
 }
 .barre-chargement{
     background-image: url('assets/img/chargement.png');
@@ -67,16 +76,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     height: 1rem;
 }
 
-.emeraude-achat{
-    width: 4rem;
-    height: 4rem;
-}
-.ble-achat{
-    width: 4rem;
-    height: 4rem;
-    position: relative;
-    right: 1rem;
-}
+
 
 /* FLEX utils */
 .flex-row {
@@ -119,6 +119,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   
   .hidden {
     display: none;
+  }
+  .achatbutton{
+    margin: auto;
   }
 
 

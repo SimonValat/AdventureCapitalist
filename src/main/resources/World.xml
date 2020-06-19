@@ -138,9 +138,9 @@
     <product>
       <id>4</id>
       <name>Or</name>
-      <logo>string</logo>
+      <logo>gold.png</logo>
       <cout>8640</cout>
-      <croissance>1,13</croissance>
+      <croissance>1.13</croissance>
       <revenu>4320</revenu>
       <vitesse>12000</vitesse>
       <quantite>0</quantite>
@@ -182,7 +182,7 @@
       <name>Ender pearl</name>
       <logo>enderpearl.png</logo>
       <cout>103680</cout>
-      <croissance>1,12</croissance>
+      <croissance>1.12</croissance>
       <revenu>51840</revenu>
       <vitesse>24000</vitesse>
       <quantite>0</quantite>
@@ -224,7 +224,7 @@
       <name>Diamond</name>
       <logo>diamond.png</logo>
       <cout>1255000</cout>
-      <croissance>1.11</croissance>
+      <croissance>1,11</croissance>
       <revenu>650000</revenu>
       <vitesse>96000</vitesse>
       <quantite>0</quantite>
