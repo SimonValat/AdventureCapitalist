@@ -32,13 +32,23 @@ export class RestService {
     return this.http.get(this.server + "webresources/generic/world", {
    headers: this.setHeaders(this.user)})
     .toPromise().catch(this.handleError);
-   };
-   
-   
+  };
 
-   private handleError(error: any): Promise<any> {
+  private handleError(error: any): Promise<any> {
     console.error('An error occurred', error);
     return Promise.reject(error.message || error);
-   }
+  }
+
+  private putManager(manager : Pallier): Promise<Response> {
+    return this.http.put(this.server+"webresources/generic/manager",manager,{ headers: this.setHeaders(this.user)}).toPromise();
+   
+  }
+   
+
+  // putManager(manager : Pallier): Promise<Response> {
+  //   return this.http.put(this.server + "webresources/generic/manager", manager,
+  //  { headers: this.setHeaders(this.user)} )
+  //   .toPromise();
+  //  }
 
 }

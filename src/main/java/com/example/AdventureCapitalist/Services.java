@@ -156,7 +156,11 @@ public class Services {
             }
             else if(item.isManagerUnlocked()){
                int nbProduce = 0;
-               long Temps = TimeDif;
+               if(item.getTimeleft() != 0 && item.getTimeleft()>TimeDif){
+                   nbProduce++;
+                   TimeDif = TimeDif - item.getTimeleft();
+                   item.setTimeleft(0);
+               }
                while(TimeDif >= item.getVitesse()){
                    nbProduce++;
                    TimeDif = TimeDif-item.getVitesse();
