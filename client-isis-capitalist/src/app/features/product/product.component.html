@@ -6,15 +6,22 @@
             <mat-progress-bar class="progressbar"></mat-progress-bar>
         </div>
         <div class="flex-1">
-            <button *ngIf="'coutCalcule<emeraude'" class="achat" (click)="transaction()">
+            <button class="achat" (click)="transaction()" [disabled]="etatBouton">
                 <div class="flex-row flex-1">
-                    <img class="emeraude" src="http://localhost:8080/emeraude.png">
-                    <p style="margin: auto;">{{coutCalcule}}</p>
+                    <span *ngIf="etatBouton ; then emeraudeBarree else emeraude"></span>
+                    <ng-template #emeraude>
+                        <img class="emeraude" src="http://localhost:8080/emeraude.png">
+                    </ng-template>
+                    <ng-template #emeraudeBarree>
+                        <img class="emeraude" src="http://localhost:8080/emeraudeBarree.png">
+                    </ng-template>
+                    <p style="margin: auto;" [innerHTML]="coutCalcule | bigvalue"></p>
                     &nbsp;
                     <p>x{{quantiteAchat}}</p>
                 </div>
             </button>
             <!-- <input class="timer" type="text"> -->
         </div>
-    </div>
+    </div>  
 </div>
+<p>VALEUR D'achat de {{product.name}} : {{product.cout}} | POUR une quantite de {{quantiteAchat}}, le lot coûte {{coutCalcule}}</p>

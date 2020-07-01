@@ -17,6 +17,7 @@ export class ProductComponent implements OnInit, OnChanges {
 
   croissance: number;
   coutCalcule: number;
+  etatBouton: boolean;
 
   /* Provenant du TP */
   product: Product;
@@ -35,10 +36,10 @@ export class ProductComponent implements OnInit, OnChanges {
   emeraude: number;
   @Input()
     set money(value: number) {
-      if(this.product){
+      if (this.product) {
         this.emeraude = value;
         this.calcMaxCanBuy();
-    } 
+    }
   }
   progressbarvalue = 0;
   lastupdate;
@@ -58,10 +59,9 @@ export class ProductComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-    //setInterval(() => { this.calcScore(); }, 100);
-    this.croissance = 0;
-    // this.calcMaxCanBuy();
-    // this.coutCalcule = (this.product.cout * this.product.croissance ^ (this.product.quantite + this.quantiteAchat)) / (1 - this.croissance);
+    setInterval(() => { this.calcScore(); }, 100);
+    this.getEtatBouton();
+
   }
 
   startFabrication() {
@@ -96,22 +96,23 @@ export class ProductComponent implements OnInit, OnChanges {
       }
       if (quantiteAchatMultiplicateur != 0) { quantiteAchatMultiplicateur - quantiteAchatMultiplicateur - 1; }
     }
-    // if (this.product.croissance > 1) {
-      // this.emeraude = (this.emeraude - this.product.cout * this.croissance ^ (this.product.quantite + quantiteAchatMultiplicateur)) / (1 - this.croissance);
-    // }
-    this.coutCalcule = this.product.cout * this.product.croissance ^ (this.product.quantite + quantiteAchatMultiplicateur);
+    this.coutCalcule = Math.round(this.product.cout * (1 - Math.pow(this.product.croissance, this.product.quantite + quantiteAchatMultiplicateur)) / (1 - this.product.croissance));
     this.quantiteAchat = quantiteAchatMultiplicateur;
-
+    this.getEtatBouton();
   }
 
   transaction() {
-    // if (this.croissance > 1) {
-    //   this.emeraude = (this.cout - this.cout * this.croissance ^ (this.quantite + this.quantiteAchat)) / (1 - this.croissance);
-    // }
-    this.product.cout = this.product.cout * this.product.croissance ^ (this.product.quantite + this.quantiteAchat);
     this.product.quantite = this.product.quantite + this.quantiteAchat;
-    this.notifyProduction.emit(this.product);
+    this.product.cout = this.coutCalcule;
     this.onBuy.emit(this.product.cout);
-    // this.serviceSauvegarde.saveTransaction();
+  }
+
+  getEtatBouton() {
+    if (this.coutCalcule < this.emeraude) {
+      this.etatBouton = false;
+    } else {
+      this.etatBouton = true;
+    }
+    console.log('valeur etat bouton disabled :' + this.etatBouton + ' sur le bouton ' + this.product.name + '\n -------------------------------------------');
   }
 }
