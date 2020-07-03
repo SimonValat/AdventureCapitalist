@@ -39,14 +39,14 @@
   <div class="zone-produit" *ngIf="world">
     <button class="bouton-non-clique" (click)="changerMulitplicateurAchat()">achat par {{qtmulti}}</button>
     <div>
-      <app-product [prod]="world.products.product[0]" [qtmulti]="qtmulti" [money]="world.money" (notifyProduction)="onProductionDone($event)" (onBuy)="onBuyDone($event)"></app-product>
-      <app-product [prod]="world.products.product[1]" [qtmulti]="qtmulti" [money]="world.money" (notifyProduction)="onProductionDone($event)" (onBuy)="onBuyDone($event)"></app-product>
-      <app-product [prod]="world.products.product[2]" [qtmulti]="qtmulti" [money]="world.money" (notifyProduction)="onProductionDone($event)" (onBuy)="onBuyDone($event)"></app-product>
+      <app-product [prod]="world.products.product[0]" [qtmulti]="qtmulti" [money]="world.money" (startProduction)="onStartProduction($event)" (notifyProduction)="onProductionDone($event)" (onBuy)="onBuyDone($event)"></app-product>
+      <app-product [prod]="world.products.product[1]" [qtmulti]="qtmulti" [money]="world.money" (startProduction)="onStartProduction($event)" (notifyProduction)="onProductionDone($event)" (onBuy)="onBuyDone($event)"></app-product>
+      <app-product [prod]="world.products.product[2]" [qtmulti]="qtmulti" [money]="world.money" (startProduction)="onStartProduction($event)" (notifyProduction)="onProductionDone($event)" (onBuy)="onBuyDone($event)"></app-product>
     </div>
     <div>
-      <app-product [prod]="world.products.product[3]" [qtmulti]="qtmulti" [money]="world.money" (notifyProduction)="onProductionDone($event)" (onBuy)="onBuyDone($event)"></app-product>
-      <app-product [prod]="world.products.product[4]" [qtmulti]="qtmulti" [money]="world.money" (notifyProduction)="onProductionDone($event)" (onBuy)="onBuyDone($event)"></app-product>
-      <app-product [prod]="world.products.product[5]" [qtmulti]="qtmulti" [money]="world.money" (notifyProduction)="onProductionDone($event)" (onBuy)="onBuyDone($event)"></app-product>
+      <app-product [prod]="world.products.product[3]" [qtmulti]="qtmulti" [money]="world.money" (startProduction)="onStartProduction($event)" (notifyProduction)="onProductionDone($event)" (onBuy)="onBuyDone($event)"></app-product>
+      <app-product [prod]="world.products.product[4]" [qtmulti]="qtmulti" [money]="world.money" (startProduction)="onStartProduction($event)" (notifyProduction)="onProductionDone($event)" (onBuy)="onBuyDone($event)"></app-product>
+      <app-product [prod]="world.products.product[5]" [qtmulti]="qtmulti" [money]="world.money" (startProduction)="onStartProduction($event)" (notifyProduction)="onProductionDone($event)" (onBuy)="onBuyDone($event)"></app-product>
     </div>
   </div>
 </div>

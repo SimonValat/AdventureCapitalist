@@ -51,6 +51,10 @@ export class AppComponent implements OnInit {
     }
   }
 
+  onStartProduction(p: Product): void {
+    this.service.putProduct(p);
+  }
+
   onProductionDone(product: Product) {
     this.world.money += product.revenu * product.quantite;
     this.world.score += product.revenu * product.quantite;

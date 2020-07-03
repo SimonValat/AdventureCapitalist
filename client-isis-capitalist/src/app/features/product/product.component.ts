@@ -24,6 +24,7 @@ export class ProductComponent implements OnInit {
   @Input()
   set prod(value: Product) {
     this.product = value;
+    this.lastupdate = Date.now();
   }
   _qtmulti: string;
   @Input()
@@ -43,6 +44,7 @@ export class ProductComponent implements OnInit {
   }
   progressbarvalue = 0;
   lastupdate;
+  @Output() startProduction: EventEmitter<Product> = new EventEmitter<Product>();
   @Output() notifyProduction: EventEmitter<Product> = new EventEmitter<Product>();
   @Output() onBuy: EventEmitter<Number> = new EventEmitter<Number>();
 
@@ -59,8 +61,16 @@ export class ProductComponent implements OnInit {
   }
 
   startFabrication() {
+    // this.product.timeleft = this.product.vitesse;
+    // this.lastupdate = Date.now();
+    if (this.product.timeleft > 0 || this.product.quantite == 0) {
+      return;
+    }
     this.product.timeleft = this.product.vitesse;
     this.lastupdate = Date.now();
+    if (!this.product.managerUnlocked) {
+      this.startProduction.emit(this.product);
+    }
   }
 
   calcScore() {
