@@ -52,15 +52,15 @@ export class AppComponent implements OnInit {
   }
 
   onProductionDone(product: Product) {
-    this.world.money += product.cout;
-    this.world.score += product.cout;
+    this.world.money += product.revenu * product.quantite;
+    this.world.score += product.revenu * product.quantite;
     this.cdr.markForCheck();
   }
 
-  onBuyDone(money: number) {
-    console.log('Argent à prélever :', money);
+  onBuyDone(cout: number) {
+    console.log('Argent à prélever :', cout);
     console.log('Argent en poche :', this.world.money);
-    this.world.money = this.world.money - money;
+    this.world.money = this.world.money - cout;
     console.log('Argent après achat :', this.world.money);
     this.cdr.markForCheck();
   }

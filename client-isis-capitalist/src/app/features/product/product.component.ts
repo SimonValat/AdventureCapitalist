@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Product } from 'src/app/world';
 
 @Component({
@@ -6,7 +6,7 @@ import { Product } from 'src/app/world';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent implements OnInit, OnChanges {
+export class ProductComponent implements OnInit {
   /* Fait sans le TP */
   @Input() image: string;
   @Input() quantite: number;
@@ -35,10 +35,10 @@ export class ProductComponent implements OnInit, OnChanges {
   }
   emeraude: number;
   @Input()
-    set money(value: number) {
-      if (this.product) {
-        this.emeraude = value;
-        this.calcMaxCanBuy();
+  set money(value: number) {
+    if (this.product) {
+      this.emeraude = value;
+      this.calcMaxCanBuy();
     }
   }
   progressbarvalue = 0;
@@ -51,12 +51,6 @@ export class ProductComponent implements OnInit, OnChanges {
   constructor(
 
   ) { }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    // if (changes.quantiteAchat) {
-    //   this.coutCalcule = (this.cout * this.croissance ^ (this.quantite + this.quantiteAchat)) / (1 - this.croissance);
-    // }
-  }
 
   ngOnInit(): void {
     setInterval(() => { this.calcScore(); }, 100);
@@ -91,20 +85,35 @@ export class ProductComponent implements OnInit, OnChanges {
     if (this._qtmulti !== 'Max') {
       quantiteAchatMultiplicateur = Number.parseInt(this._qtmulti);
     } else {
-      while ((this.product.cout * this.croissance ^ (this.product.quantite + quantiteAchatMultiplicateur)) < this.emeraude) {
-        quantiteAchatMultiplicateur = quantiteAchatMultiplicateur + 1;
-      }
-      if (quantiteAchatMultiplicateur != 0) { quantiteAchatMultiplicateur - quantiteAchatMultiplicateur - 1; }
+      quantiteAchatMultiplicateur = Math.floor(
+        Math.log(-(this.emeraude / this.product.cout - 1 / (1 - this.product.croissance)) * (1 - this.product.croissance))
+        / Math.log(this.product.croissance)
+      );
     }
-    this.coutCalcule = Math.round(this.product.cout * (1 - Math.pow(this.product.croissance, this.product.quantite + quantiteAchatMultiplicateur)) / (1 - this.product.croissance));
     this.quantiteAchat = quantiteAchatMultiplicateur;
+    this.coutCalcule = this.getPrix(),
     this.getEtatBouton();
+
+  }
+
+  getCout(): number {
+    if (this.quantiteAchat > 0) {
+      return this.product.cout * (this.product.croissance ** (this.quantiteAchat));
+    }
+  }
+
+  getPrix(): number {
+    return (
+      (this.product.cout * (1 - this.product.croissance ** this.quantiteAchat)) /
+      (1 - this.product.croissance)
+    );
   }
 
   transaction() {
     this.product.quantite = this.product.quantite + this.quantiteAchat;
-    this.product.cout = this.coutCalcule;
-    this.onBuy.emit(this.product.cout);
+    console.log('cout du produit a l\'achat: ', this.getPrix());
+    this.onBuy.emit(this.getPrix());
+    this.product.cout = this.getCout();
   }
 
   getEtatBouton() {
@@ -113,6 +122,5 @@ export class ProductComponent implements OnInit, OnChanges {
     } else {
       this.etatBouton = true;
     }
-    console.log('valeur etat bouton disabled :' + this.etatBouton + ' sur le bouton ' + this.product.name + '\n -------------------------------------------');
   }
 }
