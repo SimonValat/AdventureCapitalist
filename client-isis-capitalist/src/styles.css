@@ -2,7 +2,7 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-  
+
 /* FONT */
 @font-face {
   font-family: "minecraft";
@@ -48,6 +48,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .product-logo{
   width: 5em;
   height: 5em;
+  cursor: pointer;
 }
 .barre-chargement{
     background-image: url('assets/img/chargement.png');
@@ -64,7 +65,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     min-width: 249px;
     max-width: 100%;
     height: 60px;
-} 
+}
+.achat:hover{
+  cursor: pointer;
+}
 
 .minecraft-font{
   font-size: 1.5rem;
@@ -83,40 +87,40 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     display: flex;
     flex-direction: row;
   }
-  
+
   .flex-column {
     display: flex;
     flex-direction: column;
   }
-  
+
   .flex-row-align {
     display: flex;
     flex-direction: row;
     align-items: center;
   }
-  
+
   .flex-column-align {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  
+
   .flex-1 {
     flex: 1;
   }
-  
+
   .flex-wrap {
     flex-wrap: wrap;
   }
-  
+
   .flex-row .mat-card+.mat-card {
     margin-left: 3rem;
   }
-  
+
   .flex-column .mat-card+.mat-card {
     margin-top: 3rem;
   }
-  
+
   .hidden {
     display: none;
   }

@@ -1,9 +1,9 @@
 <div class="flex-row product">
     <img class="product-logo" src="http://localhost:8080/{{product.logo}}" (click)="startFabrication()">
-    <p class="minecraft-font">{{product.quantite}}</p>
+    <p class="minecraft-font" style="position: absolute;">{{product.quantite}}</p>
     <div class="flex-column">
         <div class="flex-1">
-            <mat-progress-bar class="progressbar"></mat-progress-bar>
+            <mat-progress-bar [value]="progressbarvalue" class="progressbar"></mat-progress-bar>
         </div>
         <div class="flex-1">
             <button class="achat" (click)="transaction()" [disabled]="etatBouton">
@@ -22,5 +22,5 @@
             </button>
             <!-- <input class="timer" type="text"> -->
         </div>
-    </div>  
+    </div>
 </div>

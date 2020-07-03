@@ -41,15 +41,16 @@ export class RestService {
   }
 
   putProduct(product: Product): Promise<Boolean> {
-
-    return this.http.put(this.server + 'product', product, {
-      headers: this.setHeaders(this.user),
+    return this.http.put(this.server + 'adventureisis/generic/product', product, {
+      headers: this.setHeaders("test"),
     }).toPromise().catch(this.handleError);
+
+
   }
 
   putManager(manager: Pallier): Promise<any> {
     return this.http.put(this.server + 'adventureisis/generic/manager', manager,
-    { headers: this.setHeaders(this.user)} )
+    { headers: this.setHeaders("test")} )
     .toPromise();
   }
 

@@ -74,9 +74,10 @@ export class ProductComponent implements OnInit {
   }
 
   calcScore() {
+
     if (this.product.timeleft == 0) {
     } else {
-      const diffTimeLeft = (Date.now() - this.lastupdate) - this.product.timeleft;
+      const diffTimeLeft = this.product.timeleft - (Date.now() - this.lastupdate);
       if (diffTimeLeft <= 0) {
         this.product.timeleft = 0;
         this.progressbarvalue = 0;
