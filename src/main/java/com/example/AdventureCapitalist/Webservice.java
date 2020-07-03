@@ -32,7 +32,7 @@ public class Webservice {
     @Path("product")
     public void productAction (@Context HttpServletRequest request ,@RequestBody ProductType pProductType){
         String username = request.getHeader("X-user");
-        services.updateProduct(username,pProductType);
+        services.updateProduct(username,pProductType);git
     }
 
     @PUT

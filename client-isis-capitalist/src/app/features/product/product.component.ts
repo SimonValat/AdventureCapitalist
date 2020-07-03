@@ -77,8 +77,8 @@ export class ProductComponent implements OnInit {
 
     if (this.product.timeleft == 0) {
     } else {
-      const diffTimeLeft = this.product.timeleft - (Date.now() - this.lastupdate);
-      if (diffTimeLeft <= 0) {
+      this.product.timeleft = this.product.timeleft - (Date.now() - this.lastupdate);
+      if (this.product.timeleft <= 0) {
         this.product.timeleft = 0;
         this.progressbarvalue = 0;
         // on prévient le composant parent que ce produit a généré sonrevenu.
@@ -86,7 +86,9 @@ export class ProductComponent implements OnInit {
 
       } else {
         this.progressbarvalue = ((this.product.vitesse - this.product.timeleft) / this.product.vitesse) * 100;
+        console.log(this.product.timeleft);
       }
+      this.lastupdate = Date.now();
     }
 
   }
